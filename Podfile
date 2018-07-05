@@ -6,7 +6,7 @@ target 'Docket' do
   use_frameworks!
 
   # Pods for Docket
-	pod 'earlsJournal', :path => 'git@github.com:jakecasino/Docket.git'
+	pod 'earlsJournal', :git => 'git@github.com:jakecasino/Docket.git'
 
   target 'DocketTests' do
     inherit! :search_paths
