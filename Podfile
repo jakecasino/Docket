@@ -1,6 +1,6 @@
 target 'Docket' do
   use_frameworks!
-  pod 'earlsJournal', :git => 'https://github.com/jakecasino/Docket', :branch => 'master'
+  pod 'earlsJournal', :git => 'https://github.com/jakecasino/Docket.git', :branch => 'master'
 
   target 'DocketTests' do
     inherit! :search_paths
