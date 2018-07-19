@@ -1,0 +1,22 @@
+PODS:
+  - Efficio (0.2.0)
+
+DEPENDENCIES:
+  - Efficio (from `https://github.com/jakecasino/Efficio.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  Efficio:
+    :branch: master
+    :git: https://github.com/jakecasino/Efficio.git
+
+CHECKOUT OPTIONS:
+  Efficio:
+    :commit: 281b9b90f1365aee21c04cb561babccb62b3a7af
+    :git: https://github.com/jakecasino/Efficio.git
+
+SPEC CHECKSUMS:
+  Efficio: 4d2e20ad3f84da71d1a5c577188101d2e1c2632a
+
+PODFILE CHECKSUM: 29f1d130e3c0b09228d348a0b42f55d9008af2f2
+
+COCOAPODS: 1.5.3
