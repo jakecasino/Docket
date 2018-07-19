@@ -17,6 +17,7 @@
 		0B8CCC6C1FE1ACFA00B5B045 /* DocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC6B1FE1ACFA00B5B045 /* DocketUITests.swift */; };
 		0B9D9562210002B5008594D0 /* Menu Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D9561210002B5008594D0 /* Menu Bar.swift */; };
 		0B9D9564210003A9008594D0 /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D9563210003A9008594D0 /* AppDesign.swift */; };
+		0BCA34BA2101078300EDC02A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA34B92101078300EDC02A /* CoreDataStack.swift */; };
 		21A5FB7368D5377FC09D497F /* Pods_Docket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FE2BE73A98A3BC90B5068 /* Pods_Docket.framework */; };
 		8716002850647E5622188D9D /* Pods_DocketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F184BE421911456A3E65ED3 /* Pods_DocketUITests.framework */; };
 		A9447E8B38022DE0FE964F91 /* Pods_DocketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4E386A00F22AB4394C5287 /* Pods_DocketTests.framework */; };
@@ -56,6 +57,7 @@
 		0B8CCC6D1FE1ACFA00B5B045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B9D9561210002B5008594D0 /* Menu Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menu Bar.swift"; sourceTree = "<group>"; };
 		0B9D9563210003A9008594D0 /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
+		0BCA34B92101078300EDC02A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FB2A0429BC2FB01FBD62415 /* Pods-Docket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Docket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Docket/Pods-Docket.release.xcconfig"; sourceTree = "<group>"; };
 		2FFB7552C1533DC13C173859 /* Pods-DocketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketTests/Pods-DocketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		411143B28159ED4784A2C2F0 /* Pods-DocketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketUITests/Pods-DocketUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				0B8CCC4C1FE1ACFA00B5B045 /* Main.storyboard */,
 				0B8CCC4A1FE1ACFA00B5B045 /* DocketViewController.swift */,
 				0B9D9561210002B5008594D0 /* Menu Bar.swift */,
+				0BCA34B92101078300EDC02A /* CoreDataStack.swift */,
 				0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */,
 				0B9D9563210003A9008594D0 /* AppDesign.swift */,
 				0B8CCC521FE1ACFA00B5B045 /* Assets.xcassets */,
@@ -393,6 +396,7 @@
 				0B8CCC511FE1ACFA00B5B045 /* Docket.xcdatamodeld in Sources */,
 				0B9D9564210003A9008594D0 /* AppDesign.swift in Sources */,
 				0B9D9562210002B5008594D0 /* Menu Bar.swift in Sources */,
+				0BCA34BA2101078300EDC02A /* CoreDataStack.swift in Sources */,
 				0B8CCC4B1FE1ACFA00B5B045 /* DocketViewController.swift in Sources */,
 				0B8CCC491FE1ACFA00B5B045 /* AppDelegate.swift in Sources */,
 			);
