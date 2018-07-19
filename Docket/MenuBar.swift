@@ -12,5 +12,6 @@ class DKTMenuBarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		Assistant.estimateTimeForBreakfast()
     }
 }
