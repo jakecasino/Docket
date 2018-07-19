@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>378794813806-q23nt14hglb4s4js7qgbt94gib6dtapl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.378794813806-q23nt14hglb4s4js7qgbt94gib6dtapl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBERfRCEIJ_VTTCBjK5RvrT3BFyWXhWO1I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>378794813806</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jakecasino.Docket</string>
+	<key>PROJECT_ID</key>
+	<string>docket-9fd70</string>
+	<key>STORAGE_BUCKET</key>
+	<string>docket-9fd70.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:378794813806:ios:594e3f9887590264</string>
+	<key>DATABASE_URL</key>
+	<string>https://docket-9fd70.firebaseio.com</string>
+</dict>
+</plist>
