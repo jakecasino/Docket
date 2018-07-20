@@ -24,7 +24,7 @@ enum UIMenuBarTabTypes {
 class UIMenuBar: UIScrollView {
 	var tabs = [UIMenuBarTabLabel]()
 	var tabSelector = UIView()
-	var AppNavigation: AppNavigationController?
+	var MainNavigation: UIMainNavigationController?
 	
 	func setup(withTabs tabsToAdd: [UIMenuBarTabTypes]) {
 		var estimatedContentWidth: CGFloat = 0
@@ -90,7 +90,7 @@ class UIMenuBar: UIScrollView {
 					self.contentOffset = CGPoint(x: newContentOffset, y: 0)
 					
 					// Select appropriate navigation collection cell
-					guard let AppNavigation = self.AppNavigation else { return }
+					guard let AppNavigation = self.MainNavigation else { return }
 					AppNavigation.moveToNavigationCollectionCell(at: index)
 				}
 				

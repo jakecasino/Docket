@@ -9,12 +9,12 @@
 import UIKit
 import Efficio
 
-class AppNavigationController: UIViewController {
-	var NavBar: UINavMenuBarViewController?
+class UIMainNavigationController: UIViewController {
+	var NavBar: UINavBarViewController?
 	@IBOutlet weak var NavigationCollection: UICollectionView!
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let NAVBAR = segue.destination as? UINavMenuBarViewController {
+		if let NAVBAR = segue.destination as? UINavBarViewController {
 			NavBar = NAVBAR
 		} else { error.regarding(self, explanation: "Could not connect the navbar to Docket Navigation Controller.") }
 	}
@@ -24,7 +24,7 @@ class AppNavigationController: UIViewController {
 		NavigationCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "navigationCell")
 		
 		guard let NavBar = NavBar else { return }
-		NavBar.MenuBar.AppNavigation = self
+		NavBar.MenuBar.MainNavigation = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,9 +33,9 @@ class AppNavigationController: UIViewController {
 
 }
 
-extension AppNavigationController: UICollectionViewDataSource {
+extension UIMainNavigationController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return UINavMenuBarViewController.MenuBarNavigationTabs.count
+		return UINavBarViewController.MenuBarNavigationTabs.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,7 +60,7 @@ extension AppNavigationController: UICollectionViewDataSource {
 	}
 }
 
-extension AppNavigationController: UICollectionViewDelegateFlowLayout {
+extension UIMainNavigationController: UICollectionViewDelegateFlowLayout {
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 		guard let NavBar = NavBar else { return }
 		var i = (NavigationCollection.contentOffset.x / NavigationCollection.frame.width)

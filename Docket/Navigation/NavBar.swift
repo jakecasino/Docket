@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UINavMenuBarViewController: UIViewController {
+class UINavBarViewController: UIViewController {
 	@IBOutlet weak var MenuBar: UIMenuBar!
 	
 	static var MenuBarNavigationTabs: [UIMenuBarTabTypes] {
@@ -16,6 +16,6 @@ class UINavMenuBarViewController: UIViewController {
 	}
 	
 	override func viewDidLayoutSubviews() {
-		MenuBar.setup(withTabs: UINavMenuBarViewController.MenuBarNavigationTabs)
+		MenuBar.setup(withTabs: UINavBarViewController.MenuBarNavigationTabs)
 	}
 }
