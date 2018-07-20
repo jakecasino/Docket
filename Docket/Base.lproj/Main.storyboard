@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,47 +10,115 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Docket View Controller-->
+        <!--Docket Navigation Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DocketViewController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DocketNavigationController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-5Y-Soj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-zW-N9C">
+                                <rect key="frame" x="0.0" y="108" width="375" height="704"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="Ms9-az-YLg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="navigationCell" id="7jT-oH-2Dh">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cb0-dS-nAG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f8r-bI-n5M"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-6V-ybS" userLabel="Nav Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-5Y-Soj" userLabel="Menu Bar">
+                                <rect key="frame" x="0.0" y="52" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="eOR-wK-SAn"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="o6I-Tw-cP6" kind="embed" id="84n-qh-RH7"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vvq-5Y-Soj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3vf-vO-1fD"/>
+                            <constraint firstItem="u0S-zW-N9C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5ll-gI-qSm"/>
+                            <constraint firstItem="LLv-6V-ybS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bkM-jx-Ous"/>
+                            <constraint firstItem="Vvq-5Y-Soj" firstAttribute="bottom" secondItem="LLv-6V-ybS" secondAttribute="bottom" id="dK5-Ie-PbE"/>
+                            <constraint firstItem="u0S-zW-N9C" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="doJ-3r-k8z"/>
+                            <constraint firstItem="Vvq-5Y-Soj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="fg4-vo-8eH"/>
+                            <constraint firstItem="LLv-6V-ybS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gpT-sT-uIE"/>
+                            <constraint firstItem="LLv-6V-ybS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iPB-4L-7ko"/>
+                            <constraint firstItem="Vvq-5Y-Soj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nvn-wy-wqZ"/>
+                            <constraint firstItem="u0S-zW-N9C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pn9-6S-geP"/>
+                            <constraint firstItem="u0S-zW-N9C" firstAttribute="top" secondItem="LLv-6V-ybS" secondAttribute="bottom" id="pzw-AC-1Cp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="menuBar" destination="Vvq-5Y-Soj" id="weg-1G-PWw"/>
+                        <outlet property="navigationCollectionView" destination="u0S-zW-N9C" id="u4c-Cb-wvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
-        <!--Menu Bar View Controller-->
+        <!--Nav Menu Bar View Controller-->
         <scene sceneID="rIO-fF-oL1">
             <objects>
-                <viewController id="o6I-Tw-cP6" customClass="DKTMenuBarViewController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o6I-Tw-cP6" customClass="UINavMenuBarViewController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6PG-b9-XVK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-7w-e1Y" customClass="UIMenuBarScrollView" customModule="Docket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-xz-1o3" userLabel="Bottom Border" customClass="Border" customModule="Docket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="DdD-r7-VeO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yKe-7w-e1Y" firstAttribute="top" secondItem="6PG-b9-XVK" secondAttribute="top" id="KtF-CA-Ak0"/>
+                            <constraint firstItem="yKe-7w-e1Y" firstAttribute="leading" secondItem="YHI-T4-9mA" secondAttribute="leading" id="Nr8-mK-8M9"/>
+                            <constraint firstAttribute="bottom" secondItem="yKe-7w-e1Y" secondAttribute="bottom" id="bW1-z4-j4h"/>
+                            <constraint firstItem="YHI-T4-9mA" firstAttribute="trailing" secondItem="9GH-xz-1o3" secondAttribute="trailing" id="eht-Gi-aT1"/>
+                            <constraint firstAttribute="bottom" secondItem="9GH-xz-1o3" secondAttribute="bottom" id="hLg-oK-SPN"/>
+                            <constraint firstItem="YHI-T4-9mA" firstAttribute="trailing" secondItem="yKe-7w-e1Y" secondAttribute="trailing" id="oXC-fG-xES"/>
+                            <constraint firstItem="9GH-xz-1o3" firstAttribute="leading" secondItem="6PG-b9-XVK" secondAttribute="leading" id="s8k-vn-fxB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YHI-T4-9mA"/>
                     </view>
+                    <connections>
+                        <outlet property="menuBarScrollView" destination="yKe-7w-e1Y" id="JUG-J4-LMY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-Tp-eh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="-557"/>
+            <point key="canvasLocation" x="956" y="-119.64017991004499"/>
         </scene>
     </scenes>
 </document>

@@ -12,3 +12,5 @@ import Efficio
 extension UIColor {
 	static var redBrown: UIColor { return UIColor.from(RGB: [165, 42, 42]) }
 }
+
+class Border: UIView { }

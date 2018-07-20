@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 class CoreData {
-	// MARK: - Core Data stack
 	
 	private init() { }
 	

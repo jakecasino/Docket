@@ -11,10 +11,13 @@ import Foundation
 let Assistant = DocketAssistantModel()
 
 class DocketAssistantModel {
-	var recommendedHoursOfSleep: Double?
+	var targetWorkHours: Double?
+	var targetSleepHours: Double?
 	
-	fileprivate init() {
-		
+	fileprivate init() { }
+	
+	func chooseProjectsAndTasksToWorkOn() -> Any? {
+		return nil
 	}
 	
 	func estimateTimeForBreakfast() {
