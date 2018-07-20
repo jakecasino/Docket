@@ -21,9 +21,10 @@ enum UIMenuBarTabTypes {
 	case about
 }
 
-class UIMenuBarScrollView: UIScrollView {
+class UIMenuBar: UIScrollView {
 	var tabs = [UIMenuBarTabLabel]()
 	var tabSelector = UIView()
+	var AppNavigation: AppNavigationController?
 	
 	func setup(withTabs tabsToAdd: [UIMenuBarTabTypes]) {
 		var estimatedContentWidth: CGFloat = 0
@@ -77,8 +78,9 @@ class UIMenuBarScrollView: UIScrollView {
 			var newContentOffset: CGFloat = 0
 			for (index, tab) in self.tabs.enumerated() {
 				
-				// Move scrollview to appropriate position
 				if tab.isEnabled {
+					
+					// Move scrollview to appropriate position
 					newContentOffset = (self.contentSize.width - self.bounds.width) * (((CGFloat(index) + 0.5) / CGFloat(self.tabs.count)))
 					
 					if index == 0 { newContentOffset = -(padding.medium) }
@@ -86,6 +88,10 @@ class UIMenuBarScrollView: UIScrollView {
 					else if index <= (self.tabs.count / 2) { newContentOffset -= padding.medium }
 					else { newContentOffset += padding.medium }
 					self.contentOffset = CGPoint(x: newContentOffset, y: 0)
+					
+					// Select appropriate navigation collection cell
+					guard let AppNavigation = self.AppNavigation else { return }
+					AppNavigation.moveToNavigationCollectionCell(at: index)
 				}
 				
 				// Realign all Menu Bar tabs

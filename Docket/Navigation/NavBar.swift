@@ -9,13 +9,13 @@
 import UIKit
 
 class UINavMenuBarViewController: UIViewController {
-	@IBOutlet weak var menuBarScrollView: UIMenuBarScrollView!
+	@IBOutlet weak var MenuBar: UIMenuBar!
 	
 	static var MenuBarNavigationTabs: [UIMenuBarTabTypes] {
 		return [.docket, .planner, .userProfile, .settings]
 	}
 	
 	override func viewDidLayoutSubviews() {
-		menuBarScrollView.setup(withTabs: UINavMenuBarViewController.MenuBarNavigationTabs)
+		MenuBar.setup(withTabs: UINavMenuBarViewController.MenuBarNavigationTabs)
 	}
 }

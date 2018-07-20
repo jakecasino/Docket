@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>378794813806-q23nt14hglb4s4js7qgbt94gib6dtapl.apps.googleusercontent.com</string>
+	<string>378794813806-qa0mgrkrtbt3kv6ue1hdvbh038n412gt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.378794813806-q23nt14hglb4s4js7qgbt94gib6dtapl</string>
+	<string>com.googleusercontent.apps.378794813806-qa0mgrkrtbt3kv6ue1hdvbh038n412gt</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBERfRCEIJ_VTTCBjK5RvrT3BFyWXhWO1I</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>jakecasino.Docket</string>
+	<string>com.jakecasino.docket</string>
 	<key>PROJECT_ID</key>
 	<string>docket-9fd70</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:378794813806:ios:594e3f9887590264</string>
+	<string>1:378794813806:ios:38a7b660c48e855b</string>
 	<key>DATABASE_URL</key>
 	<string>https://docket-9fd70.firebaseio.com</string>
 </dict>

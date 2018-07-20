@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Docket Navigation Controller-->
+        <!--App Navigation Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DocketNavigationController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AppNavigationController" customModule="Docket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="navigationCollectionView" destination="u0S-zW-N9C" id="u4c-Cb-wvk"/>
+                        <outlet property="NavigationCollection" destination="u0S-zW-N9C" id="u4c-Cb-wvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-7w-e1Y" customClass="UIMenuBarScrollView" customModule="Docket" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-7w-e1Y" customClass="UIMenuBar" customModule="Docket" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-xz-1o3" userLabel="Bottom Border" customClass="Border" customModule="Docket" customModuleProvider="target">
@@ -113,7 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="YHI-T4-9mA"/>
                     </view>
                     <connections>
-                        <outlet property="menuBarScrollView" destination="yKe-7w-e1Y" id="JUG-J4-LMY"/>
+                        <outlet property="MenuBar" destination="yKe-7w-e1Y" id="JUG-J4-LMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-Tp-eh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
