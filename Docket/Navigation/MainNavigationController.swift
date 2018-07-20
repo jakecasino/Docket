@@ -61,7 +61,7 @@ extension UIMainNavigationController: UICollectionViewDataSource {
 }
 
 extension UIMainNavigationController: UICollectionViewDelegateFlowLayout {
-	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+	func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
 		guard let NavBar = NavBar else { return }
 		var i = (NavigationCollection.contentOffset.x / NavigationCollection.frame.width)
 		i.round()
