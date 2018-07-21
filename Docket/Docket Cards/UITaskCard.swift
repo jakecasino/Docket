@@ -1,5 +1,5 @@
 //
-//  UIStandardCollectionViewCell.swift
+//  UITaskCard.swift
 //  Docket
 //
 //  Created by Jake Casino on 7/20/18.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class UIStandardCardView: UIView {
-	@IBOutlet var Card: UICollectionViewCell!
+class UITaskCard: UIView {
+	@IBOutlet var View: UIView!
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		
-		Bundle.main.loadNibNamed("UIStandardCardView", owner: self, options: nil)
-		addSubview(Card)
+		Bundle.main.loadNibNamed("UITaskCardView", owner: self, options: nil)
+		addSubview(View)
 	}
+
 }

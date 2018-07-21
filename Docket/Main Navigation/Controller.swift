@@ -17,6 +17,9 @@ class UIMainNavigationController: UIViewController {
 	private let ID_UserProfile = "User Profile"
 	private let ID_Settings = "Settings"
 	
+	// For determining scroll direction
+	private var lastContentOffset: CGFloat = 0
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let NAVBAR = segue.destination as? UINavBarViewController {
 			NavBar = NAVBAR
@@ -29,6 +32,7 @@ class UIMainNavigationController: UIViewController {
 		TabCollection.register(UIPlannerTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Planner)
 		TabCollection.register(UIUserProfileTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_UserProfile)
 		TabCollection.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Settings)
+		lastContentOffset = TabCollection.contentOffset.x
 		
 		guard let NavBar = NavBar else { return }
 		NavBar.MenuBar.MainNavigation = self
@@ -78,11 +82,19 @@ extension UIMainNavigationController: UICollectionViewDelegateFlowLayout {
 		TabCollection.setContentOffset(CGPoint(x: TabCollection.frame.width * CGFloat(index), y: 0), animated: true)
 	}
 	
+	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+		lastContentOffset = TabCollection.contentOffset.x
+	}
+	
 	func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+		let currentContentOffset = TabCollection.contentOffset.x
+		
 		guard let NavBar = NavBar else { return }
-		var i = (TabCollection.contentOffset.x / TabCollection.frame.width)
-		i.round()
-		NavBar.MenuBar.switchToTab(NavBar.MenuBar.tabs[Int(i)])
+		if (currentContentOffset > lastContentOffset) {
+			NavBar.MenuBar.switchToTab(.next)
+		} else if currentContentOffset < lastContentOffset {
+			NavBar.MenuBar.switchToTab(.previous)
+		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

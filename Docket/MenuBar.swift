@@ -25,6 +25,7 @@ class UIMenuBar: UIScrollView {
 	var tabs = [UIMenuBarTabLabel]()
 	var tabSelector = UIView()
 	var MainNavigation: UIMainNavigationController?
+	var selectedMenuBarTab: UIMenuBarTabLabel?
 	
 	func setup(withTabs tabsToAdd: [UIMenuBarTabTypes]) {
 		var estimatedContentWidth: CGFloat = 0
@@ -41,7 +42,7 @@ class UIMenuBar: UIScrollView {
 			
 			var xOrigin: CGFloat = 0
 			if tabs.isEmpty {
-				tabLabel.toggle()
+				switchToTab(tabLabel)
 				
 				tabSelector.matchFrame(to: tabLabel)
 				tabSelector.move(x: nil, y: origins.middle)
@@ -67,11 +68,12 @@ class UIMenuBar: UIScrollView {
 		switchToTab(selectedMenuBarTab)
 	}
 	
-	func switchToTab(_ selectedMenuBarTab: UIMenuBarTabLabel) {
+	func switchToTab(_ SELECTEDTAB: UIMenuBarTabLabel) {
 		
 		// Disable already activated Menu Bar Tab and enable selected one
 		tabs.forEach { if $0.isEnabled { $0.toggle() } }
-		selectedMenuBarTab.toggle()
+		SELECTEDTAB.toggle()
+		selectedMenuBarTab = SELECTEDTAB
 		
 		UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
 			
@@ -102,8 +104,29 @@ class UIMenuBar: UIScrollView {
 			}
 			
 			// Move the Tab Selector
-			self.tabSelector.matchFrame(to: selectedMenuBarTab)
+			self.tabSelector.matchFrame(to: self.selectedMenuBarTab!)
 		})
+	}
+	
+	enum tabDirections {
+		case next
+		case previous
+	}
+	
+	func switchToTab(_ tabDirection: tabDirections) {
+		guard let selectedMenuBarTab = selectedMenuBarTab else { return }
+		if let currentIndex = tabs.firstIndex(of: selectedMenuBarTab) {
+			switch tabDirection {
+			case .next:
+				let nextIndex = currentIndex + 1
+				if tabs.indices.contains(nextIndex) { switchToTab(tabs[nextIndex]) }
+				break
+			case .previous:
+				let prevIndex = currentIndex - 1
+				if tabs.indices.contains(prevIndex) { switchToTab(tabs[prevIndex]) }
+				break
+			}
+		}
 	}
 	
 	class UIMenuBarTabLabel: UILabel {
