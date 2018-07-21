@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Efficio:
-    :commit: a59996061d216932dcd63238ea2676ba14a15135
+    :commit: 7a42493d92383ba365f3fa402653281fbd99066c
     :git: https://github.com/jakecasino/Efficio.git
 
 SPEC CHECKSUMS:

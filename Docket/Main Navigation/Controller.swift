@@ -57,7 +57,6 @@ extension UIMainNavigationController: UICollectionViewDataSource {
 		switch NavBar.MenuBar.tabs[indexPath.row].tabType {
 		case .docket:
 			let tabView = TabCollection.dequeueReusableCell(withReuseIdentifier: ID_Docket, for: indexPath) as! UIDocketTabCollectionViewCell
-			tabView.backgroundColor = UIColor.blue
 			return tabView
 		case .planner:
 			let tabView = TabCollection.dequeueReusableCell(withReuseIdentifier: ID_Planner, for: indexPath) as! UIPlannerTabCollectionViewCell

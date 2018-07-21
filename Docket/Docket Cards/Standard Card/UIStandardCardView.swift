@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Efficio
+
+protocol UIStandardCardViewDelegate {
+	var content: UIStandardCardView? { get set }
+}
 
 class UIStandardCardView: UIView {
 	@IBOutlet var Card: UIView!
@@ -14,10 +19,30 @@ class UIStandardCardView: UIView {
 	@IBOutlet weak var leftLabel: UILabel!
 	@IBOutlet weak var rightLabel: UILabel!
 	
+	convenience init(in view: UIView) {
+		self.init(frame: .zero)
+		view.addSubview(self)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		loadXib()
+	}
+	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		
-		Bundle.main.loadNibNamed("UIStandardCardView", owner: self, options: nil)
-		addSubview(Card)
+		loadXib()
+	}
+	
+	override func didMoveToSuperview() {
+		guard superview != nil else { return }
+		resize(width: boundingAreas.width, height: boundingAreas.height)
+		style(self, [.corners: corners.extraLarge, .maskContent: true])
+		dropShadow(opacity: 0.3, x: 0, y: 2, spread: 6)
+	}
+	
+	func loadXib() {
+		loadXib(named: "UIStandardCardView")
+		setupXibView(Card, inContainer: self)
 	}
 }

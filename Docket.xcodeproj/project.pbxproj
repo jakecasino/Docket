@@ -27,8 +27,7 @@
 		0BDC7DE82102C98D00BE8380 /* Planner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DE72102C98D00BE8380 /* Planner.swift */; };
 		0BDC7DEB2102C9F300BE8380 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */; };
 		0BDC7DED2102CA0F00BE8380 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DEC2102CA0F00BE8380 /* Settings.swift */; };
-		0BDC7DF22102CE4700BE8380 /* UITaskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DF12102CE4700BE8380 /* UITaskCard.swift */; };
-		0BDC7DF42102CE6800BE8380 /* UITaskCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC7DF32102CE6800BE8380 /* UITaskCard.xib */; };
+		0BDC7DF22102CE4700BE8380 /* UITaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */; };
 		21A5FB7368D5377FC09D497F /* Pods_Docket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FE2BE73A98A3BC90B5068 /* Pods_Docket.framework */; };
 		8716002850647E5622188D9D /* Pods_DocketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F184BE421911456A3E65ED3 /* Pods_DocketUITests.framework */; };
 		A9447E8B38022DE0FE964F91 /* Pods_DocketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4E386A00F22AB4394C5287 /* Pods_DocketTests.framework */; };
@@ -78,8 +77,7 @@
 		0BDC7DE72102C98D00BE8380 /* Planner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planner.swift; sourceTree = "<group>"; };
 		0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		0BDC7DEC2102CA0F00BE8380 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		0BDC7DF12102CE4700BE8380 /* UITaskCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskCard.swift; sourceTree = "<group>"; };
-		0BDC7DF32102CE6800BE8380 /* UITaskCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITaskCard.xib; sourceTree = "<group>"; };
+		0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskCardView.swift; sourceTree = "<group>"; };
 		1FB2A0429BC2FB01FBD62415 /* Pods-Docket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Docket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Docket/Pods-Docket.release.xcconfig"; sourceTree = "<group>"; };
 		2FFB7552C1533DC13C173859 /* Pods-DocketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketTests/Pods-DocketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		411143B28159ED4784A2C2F0 /* Pods-DocketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketUITests/Pods-DocketUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,8 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				0BDC7DF02102CDA900BE8380 /* Standard Card */,
-				0BDC7DF12102CE4700BE8380 /* UITaskCard.swift */,
-				0BDC7DF32102CE6800BE8380 /* UITaskCard.xib */,
+				0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */,
 			);
 			path = "Docket Cards";
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 			files = (
 				0B8CCC561FE1ACFA00B5B045 /* LaunchScreen.storyboard in Resources */,
 				0BCA34BC21010DA500EDC02A /* GoogleService-Info.plist in Resources */,
-				0BDC7DF42102CE6800BE8380 /* UITaskCard.xib in Resources */,
 				0B8CCC531FE1ACFA00B5B045 /* Assets.xcassets in Resources */,
 				0BDC7DD6210292A300BE8380 /* UIStandardCardView.xib in Resources */,
 				0B8CCC4E1FE1ACFA00B5B045 /* Main.storyboard in Resources */,
@@ -475,7 +471,7 @@
 				0BDC7DEB2102C9F300BE8380 /* UserProfile.swift in Sources */,
 				0B8CCC4B1FE1ACFA00B5B045 /* Controller.swift in Sources */,
 				0BDC7DED2102CA0F00BE8380 /* Settings.swift in Sources */,
-				0BDC7DF22102CE4700BE8380 /* UITaskCard.swift in Sources */,
+				0BDC7DF22102CE4700BE8380 /* UITaskCardView.swift in Sources */,
 				0BCA34BE210111EF00EDC02A /* Assistant.swift in Sources */,
 				0BDC7DE82102C98D00BE8380 /* Planner.swift in Sources */,
 				0B8CCC491FE1ACFA00B5B045 /* AppDelegate.swift in Sources */,
