@@ -38,7 +38,7 @@ class UIStandardCardView: UIView {
 		guard superview != nil else { return }
 		resize(width: boundingAreas.width, height: boundingAreas.height)
 		style(self, [.corners: corners.extraLarge, .maskContent: true])
-		dropShadow(opacity: 0.3, x: 0, y: 2, spread: 6)
+		dropShadow(opacity: 0.3, x: 0, y: 4, blur: 16, spread: -8)
 	}
 	
 	func loadXib() {

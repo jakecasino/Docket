@@ -10,11 +10,13 @@ import UIKit
 import Efficio
 
 class UITaskCardView: UIView, UIStandardCardViewDelegate {
+	static var standardHeight: CGFloat { return 56 }
 	var content: UIStandardCardView?
 	
 	convenience init(in view: UIView) {
 		self.init(addTo: view)
-		resize(width: view.frame.width - padding.large, height: 56)
+		view.addPadding(top: 0, left: padding.medium, bottom: 0, right: padding.medium)
+		resize(width: boundingAreas.widthMinusPadding, height: UITaskCardView.standardHeight)
 		move(x: origins.center, y: nil)
 		content = UIStandardCardView(in: self)
 	}

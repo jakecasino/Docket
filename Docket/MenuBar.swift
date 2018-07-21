@@ -34,7 +34,7 @@ class UIMenuBar: UIScrollView {
 		
 		tabSelector = UIView(addTo: self)
 		style(tabSelector, [.backgroundColor: UIColor.redBrown, .corners: corners.large])
-		tabSelector.dropShadow(opacity: 0.3, x: 0, y: 2, spread: 4)
+		tabSelector.dropShadow(opacity: 0.3, x: 0, y: 4, blur: 16, spread: -4)
 		
 		for (index, tabToAdd) in tabsToAdd.enumerated() {
 			
