@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61D5F554E7F1E2220EF1C8DD6F8F76F8"
+               BlueprintIdentifier = "BA39D7A64FDF8DCB26DBB88988E87BBD"
                BlueprintName = "Efficio"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Efficio.framework">

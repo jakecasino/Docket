@@ -14,3 +14,7 @@ extension UIColor {
 }
 
 class Border: UIView { }
+
+extension Glyphs {
+	static var calendar: String { return "calendar" }
+}

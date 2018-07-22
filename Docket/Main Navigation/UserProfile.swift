@@ -1,5 +1,5 @@
 //
-//  UserProfileTabCollectionViewCell.swift
+//  UserProfile.swift
 //  Docket
 //
 //  Created by Jake Casino on 7/20/18.
@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import  Efficio
 
-class UIUserProfileTabCollectionViewCell: UICollectionViewCell {
-    
+class UIUserProfileTabCollectionViewCell: UICollectionViewCell  {
+	
 }

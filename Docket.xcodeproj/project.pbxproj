@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B8CCC491FE1ACFA00B5B045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */; };
-		0B8CCC4B1FE1ACFA00B5B045 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4A1FE1ACFA00B5B045 /* Controller.swift */; };
+		0B8CCC4B1FE1ACFA00B5B045 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */; };
 		0B8CCC4E1FE1ACFA00B5B045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4C1FE1ACFA00B5B045 /* Main.storyboard */; };
 		0B8CCC511FE1ACFA00B5B045 /* Docket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4F1FE1ACFA00B5B045 /* Docket.xcdatamodeld */; };
 		0B8CCC531FE1ACFA00B5B045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8CCC521FE1ACFA00B5B045 /* Assets.xcassets */; };
@@ -20,14 +20,13 @@
 		0BCA34BA2101078300EDC02A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA34B92101078300EDC02A /* CoreData.swift */; };
 		0BCA34BC21010DA500EDC02A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA34BB21010DA500EDC02A /* GoogleService-Info.plist */; };
 		0BCA34BE210111EF00EDC02A /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA34BD210111EF00EDC02A /* Assistant.swift */; };
-		0BDC7DD021025ECF00BE8380 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DCF21025ECF00BE8380 /* NavBar.swift */; };
 		0BDC7DD6210292A300BE8380 /* UIStandardCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC7DD5210292A300BE8380 /* UIStandardCardView.xib */; };
 		0BDC7DD82102937D00BE8380 /* UIStandardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DD72102937D00BE8380 /* UIStandardCardView.swift */; };
 		0BDC7DE62102C8D100BE8380 /* Docket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DE52102C8D100BE8380 /* Docket.swift */; };
 		0BDC7DE82102C98D00BE8380 /* Planner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DE72102C98D00BE8380 /* Planner.swift */; };
 		0BDC7DEB2102C9F300BE8380 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */; };
 		0BDC7DED2102CA0F00BE8380 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DEC2102CA0F00BE8380 /* Settings.swift */; };
-		0BDC7DF22102CE4700BE8380 /* UITaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */; };
+		0BDC7DF22102CE4700BE8380 /* UITaskCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC7DF12102CE4700BE8380 /* UITaskCardCollectionViewCell.swift */; };
 		21A5FB7368D5377FC09D497F /* Pods_Docket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FE2BE73A98A3BC90B5068 /* Pods_Docket.framework */; };
 		8716002850647E5622188D9D /* Pods_DocketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F184BE421911456A3E65ED3 /* Pods_DocketUITests.framework */; };
 		A9447E8B38022DE0FE964F91 /* Pods_DocketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4E386A00F22AB4394C5287 /* Pods_DocketTests.framework */; };
@@ -53,7 +52,7 @@
 /* Begin PBXFileReference section */
 		0B8CCC451FE1ACF900B5B045 /* Docket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Docket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B8CCC4A1FE1ACFA00B5B045 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		0B8CCC4D1FE1ACFA00B5B045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B8CCC501FE1ACFA00B5B045 /* Docket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Docket.xcdatamodel; sourceTree = "<group>"; };
 		0B8CCC521FE1ACFA00B5B045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,14 +69,13 @@
 		0BCA34B92101078300EDC02A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		0BCA34BB21010DA500EDC02A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BCA34BD210111EF00EDC02A /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
-		0BDC7DCF21025ECF00BE8380 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		0BDC7DD5210292A300BE8380 /* UIStandardCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIStandardCardView.xib; sourceTree = "<group>"; };
 		0BDC7DD72102937D00BE8380 /* UIStandardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStandardCardView.swift; sourceTree = "<group>"; };
 		0BDC7DE52102C8D100BE8380 /* Docket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Docket.swift; sourceTree = "<group>"; };
 		0BDC7DE72102C98D00BE8380 /* Planner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planner.swift; sourceTree = "<group>"; };
 		0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		0BDC7DEC2102CA0F00BE8380 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskCardView.swift; sourceTree = "<group>"; };
+		0BDC7DF12102CE4700BE8380 /* UITaskCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FB2A0429BC2FB01FBD62415 /* Pods-Docket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Docket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Docket/Pods-Docket.release.xcconfig"; sourceTree = "<group>"; };
 		2FFB7552C1533DC13C173859 /* Pods-DocketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketTests/Pods-DocketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		411143B28159ED4784A2C2F0 /* Pods-DocketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocketUITests/Pods-DocketUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,8 +177,7 @@
 		0BDC7DE92102C9A600BE8380 /* Main Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				0BDC7DCF21025ECF00BE8380 /* NavBar.swift */,
-				0B8CCC4A1FE1ACFA00B5B045 /* Controller.swift */,
+				0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */,
 				0BDC7DE52102C8D100BE8380 /* Docket.swift */,
 				0BDC7DE72102C98D00BE8380 /* Planner.swift */,
 				0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */,
@@ -202,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0BDC7DF02102CDA900BE8380 /* Standard Card */,
-				0BDC7DF12102CE4700BE8380 /* UITaskCardView.swift */,
+				0BDC7DF12102CE4700BE8380 /* UITaskCardCollectionViewCell.swift */,
 			);
 			path = "Docket Cards";
 			sourceTree = "<group>";
@@ -307,7 +304,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Jake Casino, Inc.";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					0B8CCC441FE1ACF900B5B045 = {
 						CreatedOnToolsVersion = 9.2;
@@ -462,16 +459,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8CCC511FE1ACFA00B5B045 /* Docket.xcdatamodeld in Sources */,
-				0BDC7DD021025ECF00BE8380 /* NavBar.swift in Sources */,
 				0B9D9564210003A9008594D0 /* AppDesign.swift in Sources */,
 				0B9D9562210002B5008594D0 /* MenuBar.swift in Sources */,
 				0BDC7DE62102C8D100BE8380 /* Docket.swift in Sources */,
 				0BDC7DD82102937D00BE8380 /* UIStandardCardView.swift in Sources */,
 				0BCA34BA2101078300EDC02A /* CoreData.swift in Sources */,
 				0BDC7DEB2102C9F300BE8380 /* UserProfile.swift in Sources */,
-				0B8CCC4B1FE1ACFA00B5B045 /* Controller.swift in Sources */,
+				0B8CCC4B1FE1ACFA00B5B045 /* NavController.swift in Sources */,
 				0BDC7DED2102CA0F00BE8380 /* Settings.swift in Sources */,
-				0BDC7DF22102CE4700BE8380 /* UITaskCardView.swift in Sources */,
+				0BDC7DF22102CE4700BE8380 /* UITaskCardCollectionViewCell.swift in Sources */,
 				0BCA34BE210111EF00EDC02A /* Assistant.swift in Sources */,
 				0BDC7DE82102C98D00BE8380 /* Planner.swift in Sources */,
 				0B8CCC491FE1ACFA00B5B045 /* AppDelegate.swift in Sources */,

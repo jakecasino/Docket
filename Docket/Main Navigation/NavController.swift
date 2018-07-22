@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NavController.swift
 //  Docket
 //
 //  Created by Jake Casino on 12/13/17.
@@ -8,6 +8,18 @@
 
 import UIKit
 import Efficio
+
+class UINavBarViewController: UIViewController {
+	@IBOutlet weak var MenuBar: UIMenuBar!
+	
+	static var MenuBarNavigationTabs: [UIMenuBarTabTypes] {
+		return [.docket, .planner, .userProfile, .settings]
+	}
+	
+	override func viewDidLayoutSubviews() {
+		MenuBar.setup(withTabs: UINavBarViewController.MenuBarNavigationTabs)
+	}
+}
 
 class UIMainNavigationController: UIViewController {
 	var NavBar: UINavBarViewController?
@@ -60,7 +72,6 @@ extension UIMainNavigationController: UICollectionViewDataSource {
 			return tabView
 		case .planner:
 			let tabView = TabCollection.dequeueReusableCell(withReuseIdentifier: ID_Planner, for: indexPath) as! UIPlannerTabCollectionViewCell
-			tabView.backgroundColor = UIColor.redBrown
 			return tabView
 		case .userProfile:
 			let tabView = TabCollection.dequeueReusableCell(withReuseIdentifier: ID_UserProfile, for: indexPath) as! UIUserProfileTabCollectionViewCell

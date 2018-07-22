@@ -15,11 +15,11 @@ protocol UIStandardCardViewDelegate {
 
 class UIStandardCardView: UIView {
 	@IBOutlet var Card: UIView!
-	@IBOutlet weak var leftGlyph: UIImageView!
+	@IBOutlet weak var leftGlyph: Glyph!
 	@IBOutlet weak var leftLabel: UILabel!
 	@IBOutlet weak var rightLabel: UILabel!
 	
-	convenience init(in view: UIView) {
+	convenience init(rememberToCallFunction_configureCard__addTo view: UIView) {
 		self.init(frame: .zero)
 		view.addSubview(self)
 	}
@@ -35,9 +35,14 @@ class UIStandardCardView: UIView {
 	}
 	
 	override func didMoveToSuperview() {
-		guard superview != nil else { return }
-		resize(width: boundingAreas.width, height: boundingAreas.height)
-		style(self, [.corners: corners.extraLarge, .maskContent: true])
+		guard let superview = superview else { return }
+		resize(toFit: superview)
+		style(self, [.corners: corners.extraLarge, .maskContent: true, .borderColor: UIColor(white: 0, alpha: 0.08), .borderWidth: 0.5])
+		leftGlyph.render(Glyphs.calendar, tintColor: UIColor.red)
+	}
+	
+	func configureCard(setupFrame: () -> ()) {
+		setupFrame()
 		dropShadow(opacity: 0.3, x: 0, y: 4, blur: 16, spread: -8)
 	}
 	

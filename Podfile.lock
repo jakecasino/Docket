@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Efficio:
-    :commit: 373277feb7aa2253de55fa237e10607ba74573dd
+    :commit: b8bbe5f1e442ab6496e6511c8846aa3a764e0d2d
     :git: https://github.com/jakecasino/Efficio.git
 
 SPEC CHECKSUMS:
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: de0c4facb30d5b4f7115b95039ebfceaaf6ad353
+PODFILE CHECKSUM: a48117c3c8d51c6f205857f696e134c2cbc7c593
 
 COCOAPODS: 1.5.3
