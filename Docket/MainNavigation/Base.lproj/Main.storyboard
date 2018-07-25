@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-zW-N9C">
-                                <rect key="frame" x="0.0" y="108" width="375" height="704"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="Ms9-az-YLg">
                                     <size key="itemSize" width="100" height="100"/>
@@ -52,7 +52,7 @@
                                         </view>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="User Profile" id="ubf-Mu-NWc" customClass="UIUserProfileTabCollectionViewCell" customModule="Docket" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="241.66666666666666" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="241" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -60,7 +60,7 @@
                                         </view>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Settings" id="qks-DJ-ShC" customClass="UISettingsTabCollectionViewCell" customModule="Docket" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="362.33333333333331" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="361.66666666666669" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -73,11 +73,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="f8r-bI-n5M"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-6V-ybS" userLabel="Nav Bar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-6V-ybS" userLabel="Nav Bar View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-5Y-Soj" userLabel="Menu Bar">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-5Y-Soj" userLabel="Nav Bar Controller">
                                 <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -87,25 +87,34 @@
                                     <segue destination="o6I-Tw-cP6" kind="embed" id="84n-qh-RH7"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-Kc-bme" customClass="UIAssistantInteractionBarView" customModule="Docket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="690" width="375" height="122"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vvq-5Y-Soj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3vf-vO-1fD"/>
                             <constraint firstItem="u0S-zW-N9C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5ll-gI-qSm"/>
+                            <constraint firstItem="5k5-Kc-bme" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Agg-tV-jup"/>
+                            <constraint firstItem="5k5-Kc-bme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tfl-Ry-8UB"/>
+                            <constraint firstItem="5k5-Kc-bme" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aIO-xv-tay"/>
                             <constraint firstItem="LLv-6V-ybS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bkM-jx-Ous"/>
                             <constraint firstItem="Vvq-5Y-Soj" firstAttribute="bottom" secondItem="LLv-6V-ybS" secondAttribute="bottom" id="dK5-Ie-PbE"/>
-                            <constraint firstItem="u0S-zW-N9C" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="doJ-3r-k8z"/>
+                            <constraint firstItem="u0S-zW-N9C" firstAttribute="bottom" secondItem="5k5-Kc-bme" secondAttribute="top" id="doJ-3r-k8z"/>
                             <constraint firstItem="Vvq-5Y-Soj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="fg4-vo-8eH"/>
                             <constraint firstItem="LLv-6V-ybS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gpT-sT-uIE"/>
                             <constraint firstItem="LLv-6V-ybS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iPB-4L-7ko"/>
                             <constraint firstItem="Vvq-5Y-Soj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nvn-wy-wqZ"/>
                             <constraint firstItem="u0S-zW-N9C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pn9-6S-geP"/>
                             <constraint firstItem="u0S-zW-N9C" firstAttribute="top" secondItem="LLv-6V-ybS" secondAttribute="bottom" id="pzw-AC-1Cp"/>
+                            <constraint firstItem="5k5-Kc-bme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-88" id="wox-0Q-fDG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="TabCollection" destination="u0S-zW-N9C" id="u4c-Cb-wvk"/>
+                        <outlet property="assistantInteractionBarView" destination="5k5-Kc-bme" id="aBB-Bv-BSW"/>
+                        <outlet property="navBarView" destination="LLv-6V-ybS" id="IAC-os-bTW"/>
+                        <outlet property="tabsCollectionView_fromInterfaceBuilder" destination="u0S-zW-N9C" id="u4c-Cb-wvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,7 +153,7 @@
                         <viewLayoutGuide key="safeArea" id="YHI-T4-9mA"/>
                     </view>
                     <connections>
-                        <outlet property="MenuBar" destination="yKe-7w-e1Y" id="JUG-J4-LMY"/>
+                        <outlet property="menuBar" destination="yKe-7w-e1Y" id="JUG-J4-LMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-Tp-eh5" userLabel="First Responder" sceneMemberID="firstResponder"/>

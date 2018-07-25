@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2F00692104FEAD00AD2FF4 /* ProjectPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F00682104FEAD00AD2FF4 /* ProjectPage.swift */; };
+		0B2F006D2106A40800AD2FF4 /* UIAssistantInteractionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F006B2106A40800AD2FF4 /* UIAssistantInteractionBarView.swift */; };
+		0B2F006E2106A40800AD2FF4 /* UIAssistantInteractionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F006C2106A40800AD2FF4 /* UIAssistantInteractionBarView.xib */; };
 		0B8CCC491FE1ACFA00B5B045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */; };
 		0B8CCC4B1FE1ACFA00B5B045 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */; };
 		0B8CCC4E1FE1ACFA00B5B045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8CCC4C1FE1ACFA00B5B045 /* Main.storyboard */; };
@@ -50,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2F00672104FDFC00AD2FF4 /* ProjectPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ProjectPage.storyboard; path = "/Users/jakecasino/Library/Mobile Documents/iCloud~com~apple~Playgrounds/Documents/Docket/Docket/ProjectPage.storyboard"; sourceTree = "<absolute>"; };
+		0B2F00682104FEAD00AD2FF4 /* ProjectPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPage.swift; sourceTree = "<group>"; };
+		0B2F006B2106A40800AD2FF4 /* UIAssistantInteractionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAssistantInteractionBarView.swift; sourceTree = "<group>"; };
+		0B2F006C2106A40800AD2FF4 /* UIAssistantInteractionBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIAssistantInteractionBarView.xib; sourceTree = "<group>"; };
 		0B8CCC451FE1ACF900B5B045 /* Docket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Docket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
@@ -115,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2F006A2104FEB700AD2FF4 /* ProjectPage */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F00672104FDFC00AD2FF4 /* ProjectPage.storyboard */,
+				0B2F00682104FEAD00AD2FF4 /* ProjectPage.swift */,
+			);
+			path = ProjectPage;
+			sourceTree = "<group>";
+		};
 		0B8CCC3C1FE1ACF900B5B045 = {
 			isa = PBXGroup;
 			children = (
@@ -140,13 +156,15 @@
 		0B8CCC471FE1ACF900B5B045 /* Docket */ = {
 			isa = PBXGroup;
 			children = (
-				0B8CCC4C1FE1ACFA00B5B045 /* Main.storyboard */,
-				0BDC7DE92102C9A600BE8380 /* Main Navigation */,
+				0BDC7DE92102C9A600BE8380 /* MainNavigation */,
+				0B2F006A2104FEB700AD2FF4 /* ProjectPage */,
 				0BDC7DEE2102CCD700BE8380 /* CoreData */,
 				0BDC7DEF2102CD0000BE8380 /* Docket Cards */,
 				0B9D9561210002B5008594D0 /* MenuBar.swift */,
 				0B8CCC481FE1ACFA00B5B045 /* AppDelegate.swift */,
 				0BCA34BD210111EF00EDC02A /* Assistant.swift */,
+				0B2F006B2106A40800AD2FF4 /* UIAssistantInteractionBarView.swift */,
+				0B2F006C2106A40800AD2FF4 /* UIAssistantInteractionBarView.xib */,
 				0B9D9563210003A9008594D0 /* AppDesign.swift */,
 				0B8CCC521FE1ACFA00B5B045 /* Assets.xcassets */,
 				0B8CCC541FE1ACFA00B5B045 /* LaunchScreen.storyboard */,
@@ -174,16 +192,17 @@
 			path = DocketUITests;
 			sourceTree = "<group>";
 		};
-		0BDC7DE92102C9A600BE8380 /* Main Navigation */ = {
+		0BDC7DE92102C9A600BE8380 /* MainNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				0B8CCC4C1FE1ACFA00B5B045 /* Main.storyboard */,
 				0B8CCC4A1FE1ACFA00B5B045 /* NavController.swift */,
 				0BDC7DE52102C8D100BE8380 /* Docket.swift */,
 				0BDC7DE72102C98D00BE8380 /* Planner.swift */,
 				0BDC7DEA2102C9F300BE8380 /* UserProfile.swift */,
 				0BDC7DEC2102CA0F00BE8380 /* Settings.swift */,
 			);
-			path = "Main Navigation";
+			path = MainNavigation;
 			sourceTree = "<group>";
 		};
 		0BDC7DEE2102CCD700BE8380 /* CoreData */ = {
@@ -355,6 +374,7 @@
 				0B8CCC531FE1ACFA00B5B045 /* Assets.xcassets in Resources */,
 				0BDC7DD6210292A300BE8380 /* UIStandardCardView.xib in Resources */,
 				0B8CCC4E1FE1ACFA00B5B045 /* Main.storyboard in Resources */,
+				0B2F006E2106A40800AD2FF4 /* UIAssistantInteractionBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +487,8 @@
 				0BDC7DEB2102C9F300BE8380 /* UserProfile.swift in Sources */,
 				0B8CCC4B1FE1ACFA00B5B045 /* NavController.swift in Sources */,
 				0BDC7DED2102CA0F00BE8380 /* Settings.swift in Sources */,
+				0B2F006D2106A40800AD2FF4 /* UIAssistantInteractionBarView.swift in Sources */,
+				0B2F00692104FEAD00AD2FF4 /* ProjectPage.swift in Sources */,
 				0BDC7DF22102CE4700BE8380 /* UITaskCardCollectionViewCell.swift in Sources */,
 				0BCA34BE210111EF00EDC02A /* Assistant.swift in Sources */,
 				0BDC7DE82102C98D00BE8380 /* Planner.swift in Sources */,

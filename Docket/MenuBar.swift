@@ -9,6 +9,10 @@
 import UIKit
 import Efficio
 
+protocol UIMenuBarTabsDelegate {
+	var tabsDelegate: UIMenuBarTabsCollectionViewController! { get set }
+}
+
 enum UIMenuBarTabTypes {
 	case docket
 	case planner
@@ -21,13 +25,116 @@ enum UIMenuBarTabTypes {
 	case about
 }
 
-class UIMenuBar: UIScrollView {
+class UIMenuBarTabsCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	var tabsCollectionView: UICollectionView!
+	var menuBarNavigationTabs = [UIMenuBarTabTypes]()
+	var menuBar: UIMenuBar!
+	
+	private var lastContentOffset: CGFloat = 0
+	
+	private let ID_Docket = "Docket"
+	private let ID_Planner = "Planner"
+	private let ID_UserProfile = "User Profile"
+	private let ID_Settings = "Settings"
+	private let ID_Updates = "Updates"
+	private let ID_Tasks = "Tasks"
+	private let ID_Files = "Files"
+	private let ID_Team = "Team"
+	private let ID_About = "About"
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return menuBarNavigationTabs.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		
+		switch menuBar.tabs[indexPath.row].tabType {
+		case .docket:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Docket, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		case .planner:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Planner, for: indexPath) as! UIPlannerTabCollectionViewCell
+			return tabView
+		case .userProfile:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_UserProfile, for: indexPath) as! UIUserProfileTabCollectionViewCell
+			tabView.backgroundColor = UIColor.brown
+			return tabView
+		case .settings:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Settings, for: indexPath) as! UISettingsTabCollectionViewCell
+			tabView.backgroundColor = UIColor.yellow
+			return tabView
+		case .updates:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Updates, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		case .tasks:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Tasks, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		case .files:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Files, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		case .team:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_Team, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		case .about:
+			let tabView = tabsCollectionView.dequeueReusableCell(withReuseIdentifier: ID_About, for: indexPath) as! UIDocketTabCollectionViewCell
+			return tabView
+		}
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return tabsCollectionView.frame.size
+	}
+	
+	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+		lastContentOffset = tabsCollectionView.contentOffset.x
+	}
+	
+	func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+		let currentContentOffset = tabsCollectionView.contentOffset.x
+		
+		if (currentContentOffset > lastContentOffset) {
+			menuBar.switchToTab(.next)
+		} else if currentContentOffset < lastContentOffset {
+			menuBar.switchToTab(.previous)
+		}
+	}
+	
+	func menuBarTabsRegistration() {
+		menuBarNavigationTabs.forEach { (menuBarNavigationTab) in
+			switch menuBarNavigationTab {
+			case .docket:
+				tabsCollectionView.register(UIDocketTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Docket)
+			case .planner:
+				tabsCollectionView.register(UIPlannerTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Planner)
+			case .userProfile:
+				tabsCollectionView.register(UIUserProfileTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_UserProfile)
+			case .settings:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Settings)
+			case .updates:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Updates)
+			case .tasks:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Tasks)
+			case .files:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Files)
+			case .team:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_Team)
+			case .about:
+				tabsCollectionView.register(UISettingsTabCollectionViewCell.self, forCellWithReuseIdentifier: ID_About)
+			}
+		}
+	}
+}
+
+class UIMenuBar: UIScrollView, UIMenuBarTabsDelegate {
 	var tabs = [UIMenuBarTabLabel]()
 	var tabSelector = UIView()
-	var MainNavigation: UIMainNavigationController?
+	var tabsDelegate: UIMenuBarTabsCollectionViewController!
 	var selectedMenuBarTab: UIMenuBarTabLabel?
+	var assistantCardView: UIAssistantCardView?
 	
-	func setup(withTabs tabsToAdd: [UIMenuBarTabTypes]) {
+	func setup(tabs tabsToAdd: [UIMenuBarTabTypes], tabsDelegate TABS_DELEGATE: UIMenuBarTabsCollectionViewController) {
+		tabsDelegate = TABS_DELEGATE
+		
 		var estimatedContentWidth: CGFloat = 0
 		contentInset = UIEdgeInsets(top: 0, left: padding.medium, bottom: 0, right: padding.medium)
 		clipsToBounds = false
@@ -43,8 +150,6 @@ class UIMenuBar: UIScrollView {
 			var xOrigin: CGFloat = 0
 			if tabs.isEmpty {
 				switchToTab(tabLabel)
-				
-				tabSelector.matchFrame(to: tabLabel)
 				tabSelector.move(x: nil, y: origins.middle)
 				
 			} else {
@@ -75,6 +180,8 @@ class UIMenuBar: UIScrollView {
 		SELECTEDTAB.toggle()
 		selectedMenuBarTab = SELECTEDTAB
 		
+		if let assistantCardView = assistantCardView { assistantCardView.changeState(to: .minimized) }
+		
 		UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
 			
 			var newContentOffset: CGFloat = 0
@@ -82,7 +189,7 @@ class UIMenuBar: UIScrollView {
 				
 				if tab.isEnabled {
 					
-					// Move scrollview to appropriate position
+					// Move menubar scrollview to appropriate position
 					newContentOffset = (self.contentSize.width - self.bounds.width) * (((CGFloat(index) + 0.5) / CGFloat(self.tabs.count)))
 					
 					if index == 0 { newContentOffset = -(padding.medium) }
@@ -91,9 +198,7 @@ class UIMenuBar: UIScrollView {
 					else { newContentOffset += padding.medium }
 					self.contentOffset = CGPoint(x: newContentOffset, y: 0)
 					
-					// Select appropriate navigation collection cell
-					guard let AppNavigation = self.MainNavigation else { return }
-					AppNavigation.moveToNavigationCollectionCell(at: index)
+					self.tabsDelegate.tabsCollectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: [.centeredHorizontally, .centeredVertically], animated: true)
 				}
 				
 				// Realign all Menu Bar tabs

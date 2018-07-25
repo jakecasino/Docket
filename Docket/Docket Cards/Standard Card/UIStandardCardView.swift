@@ -10,7 +10,7 @@ import UIKit
 import Efficio
 
 protocol UIStandardCardViewDelegate {
-	var content: UIStandardCardView? { get set }
+	var content: UIStandardCardView! { get set }
 }
 
 class UIStandardCardView: UIView {
@@ -19,7 +19,7 @@ class UIStandardCardView: UIView {
 	@IBOutlet weak var leftLabel: UILabel!
 	@IBOutlet weak var rightLabel: UILabel!
 	
-	convenience init(rememberToCallFunction_configureCard__addTo view: UIView) {
+	convenience init(in view: UIView) {
 		self.init(frame: .zero)
 		view.addSubview(self)
 	}

@@ -15,11 +15,12 @@ class UIDocketTabCollectionViewCell: UICollectionViewCell, UINestedCollectionVie
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
-		collectionView = UICollectionView(addTo: self, sectionInset: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0))
+		collectionView = UICollectionView(addTo: self, sectionInset: UIEdgeInsets(top: padding.medium, left: 0, bottom: padding.extraLarge, right: 0))
 		collectionView.resize(toFit: self)
 		style(collectionView, [.backgroundColor: UIColor.whiteF8])
 		
 		collectionView.register(UITaskCardCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+		collectionView.showsVerticalScrollIndicator = false
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -34,10 +35,9 @@ extension UIDocketTabCollectionViewCell: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let card = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UITaskCardCollectionViewCell
+		if let content = card.content { if content.isHidden { content.isHidden = false } }
 		return card
 	}
-	
-	
 }
 
 extension UIDocketTabCollectionViewCell: UICollectionViewDelegateFlowLayout {
